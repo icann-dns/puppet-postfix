@@ -135,6 +135,7 @@ class postfix::server (
   $postgrey                = false,
   $postgrey_policy_service = undef,
   $clamav                  = false,
+  $files                   = {},
   # Parameters
   $command_directory      = $::postfix::params::command_directory,
   $config_directory       = $::postfix::params::config_directory,
@@ -157,7 +158,8 @@ class postfix::server (
   $newaliases_path        = $::postfix::params::newaliases_path,
   $sendmail_path          = $::postfix::params::sendmail_path
 ) inherits ::postfix::params {
-
+  
+  validate_hash($files)
   # Default has el5 files, for el6 a few defaults have changed
   if ( $::operatingsystem =~ /RedHat|CentOS/ and versioncmp($::operatingsystemrelease, '6') < 0 ) {
     $filesuffix = '-el5'
@@ -248,6 +250,6 @@ class postfix::server (
     group      => $root_group,
     postfixdir => $config_directory,
   }
-
+  create_resources(postfix::file, $files)
 }
 
