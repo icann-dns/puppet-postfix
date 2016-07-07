@@ -24,7 +24,7 @@
 #   }
 #
 define postfix::file (
-  $postfixdir = '/etc/postfix',
+  $postfixdir = $::postfix::params::config_directory,
   $owner      = 'root',
   $group      = 'root',
   $mode       = '0644',
