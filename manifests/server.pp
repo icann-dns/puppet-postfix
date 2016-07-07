@@ -184,6 +184,9 @@ class postfix::server (
     hasstatus => true,
     restart   => $service_restart,
   }
+  file { "${config_directory}/sasl":
+    ensure => directory,
+  }
 
   file { "${config_directory}/master.cf":
     content => template("postfix/master.cf${filesuffix}.erb"),
