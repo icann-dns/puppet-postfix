@@ -186,6 +186,7 @@ class postfix::server (
   }
   file { "${config_directory}/sasl":
     ensure => directory,
+    group  => $root_group,
   }
 
   file { "${config_directory}/master.cf":
