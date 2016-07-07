@@ -26,7 +26,7 @@
 define postfix::file (
   $postfixdir = $::postfix::params::config_directory,
   $owner      = 'root',
-  $group      = 'root',
+  $group      = $::postfix::params::root_group,
   $mode       = '0644',
   $content    = undef,
   $source     = undef,
