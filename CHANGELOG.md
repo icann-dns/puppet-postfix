@@ -1,3 +1,4 @@
+#### 2016-02-02 - 0.3.4
 * Expanded TLS and client-TLS directives (#28, @adamcstephens).
 * Cosmetic cleanups to main.cf templates.
 * Fix ordering of postfix::file resources (#18).
@@ -6,6 +7,8 @@
 * Fix spampd options (#46, @chihoko).
 * Add mailbox_size_limit.
 * Allow mynetworks to also be an array.
+* Allow inet_interfaces to also be an array.
+* Change from Modulefile to metadata.json.
 
 #### 2014-05-12 - 0.3.3
 * Add Debian support for spampd (#26, @timogoebel).
