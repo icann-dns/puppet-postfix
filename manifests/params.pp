@@ -44,7 +44,7 @@ class postfix::params {
         default: {
            $daemon_directory = '/usr/lib/postfix/sbin'
         }
-      {
+      }
       $data_directory = '/var/lib/postfix'
       $manpage_directory = '/usr/share/man'
       $readme_directory = '/usr/share/doc/postfix'
