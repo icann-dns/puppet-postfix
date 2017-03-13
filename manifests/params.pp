@@ -96,5 +96,5 @@ class postfix::params {
       fail("Unsupported OS family ${::osfamily}")
     }
   }
+  $compatibility_level = 2
 }
-
